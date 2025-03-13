@@ -11,7 +11,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
+
+    Route::get('calendar', function() {
+        return Inertia::render('calendar');
+    })->name('calendar');
+
+    Route::get('timer', function() {
+        return Inertia::render('timer');
+    })->name('timer');
+
+    Route::get('aboutUs', function() {
+        return Inertia::render('aboutUs');
+    })->name('aboutUs');
 });
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
