@@ -13,7 +13,7 @@ const mainNavItems: NavItem[] = [
         icon: CheckCircleIcon,
     },
     {
-        title: 'Caldendar',
+        title: 'Calendar',
         url: '/calendar',
         icon: Calendar,
     },
@@ -32,7 +32,7 @@ const mainNavItems: NavItem[] = [
 export function AppSidebar() {
     return (
         <Sidebar collapsible="icon" variant="floating">
-            <SidebarHeader>
+            <SidebarHeader className="rounded-tl-xl rounded-tr-xl bg-[#9475C9] text-white">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
@@ -45,11 +45,11 @@ export function AppSidebar() {
             </SidebarHeader>
 
             {/* Main navigation */}
-            <SidebarContent>
+            <SidebarContent className="bg-[#9475C9] font-bold text-white">
                 <NavMain items={mainNavItems} />
             </SidebarContent>
 
-            <SidebarFooter>
+            <SidebarFooter className="rounded-br-xl rounded-bl-xl bg-[#9475C9] text-white">
                 <NavUser />
             </SidebarFooter>
         </Sidebar>

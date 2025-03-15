@@ -39,7 +39,7 @@ export default function AuthSplitLayout({ children, title, description }: AuthLa
 
             {/* This is the right side of the split layout */}
             <div className="relative hidden h-full flex-col p-10 text-white lg:flex dark:border-r">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-700" />
+                <div className="absolute inset-0 bg-[#9475C9]" />
                 <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-8">
                     <h1 className="text-5xl font-bold">Work Wise</h1>
                     <p className="text-2xl font-medium">These famous people use task managers, why don't you?</p>
