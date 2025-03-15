@@ -31,7 +31,7 @@ export default function AboutUs() {
                             At <strong>WorkWise</strong>, we believe that staying organized doesn’t have to be complicated. That’s why our platform is
                             designed to be intuitive and user-friendly, giving you the freedom to focus on what really matters: your studies and
                             personal growth. We’ve combined powerful features with a clean design so you don’t have to waste time figuring out how to
-                            use the tool, just get in, get organized, and get going. We’re committed to continuously improving
+                            use the tool, just get in, get organized, and get going. We’re committed to continuously improving{' '}
                             <strong>WorkWise</strong> based on your feedback. Whether it’s adding new features, refining the design, or helping you
                             manage your tasks in even better ways, we’re always working to make your experience as seamless as possible. Together, we
                             can make your academic journey smoother and more efficient, so you can focus on achieving your goals and enjoying life
