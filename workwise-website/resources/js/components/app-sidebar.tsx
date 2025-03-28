@@ -4,8 +4,8 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, Sid
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { Calendar, CheckCircleIcon, Timer } from 'lucide-react';
-import AppLogo from './app-logo';
 
+//The navigation items for the sidebar, to add to the side, edit this
 const mainNavItems: NavItem[] = [
     {
         title: 'My Tasks',
@@ -37,7 +37,12 @@ export function AppSidebar() {
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
                             <Link href="/dashboard" prefetch>
-                                <AppLogo />
+                                {/* Workwise link to dashboard */}
+                                <Link href="/dashboard" prefetch>
+                                    <div className="ml-1 grid flex-1 text-left text-sm">
+                                        <span className="mb-0.5 truncate leading-none font-semibold">WorkWise</span>
+                                    </div>
+                                </Link>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

@@ -20,12 +20,13 @@ export default function AboutUs() {
                     </div>
                     <div className="space-y-9 p-20 text-2xl">
                         <p>
-                            Hey there! We’re <strong>WorkWise</strong> and we know how challenging it can be to juggle school, assignments, deadlines,
-                            and everything else life throws at you. That’s why we built this task manager specifically for students like you. We
-                            wanted to create a simple, no-fuss tool to help you stay on top of your tasks, track your progress, and feel more in
-                            control of your time. Whether you’re working on assignments, preparing for exams, or just trying to keep your life
-                            organized, we’ve got your back. Our goal is to help make student life a little less stressful and a lot more productive.
-                            So, go ahead and start managing your tasks with ease because you’ve got enough on your plate already.
+                            We know how difficult it can be for studends to juggle school, assignments and deadlines. Hey there! We’re{' '}
+                            <strong>WorkWise</strong> and we know how challenging it can be to juggle school, assignments, deadlines, and everything
+                            else life throws at you. That’s why we built this task manager specifically for students like you. We wanted to create a
+                            simple, no-fuss tool to help you stay on top of your tasks, track your progress, and feel more in control of your time.
+                            Whether you’re working on assignments, preparing for exams, or just trying to keep your life organized, we’ve got your
+                            back. Our goal is to help make student life a little less stressful and a lot more productive. So, go ahead and start
+                            managing your tasks with ease because you’ve got enough on your plate already.
                         </p>
                         <p>
                             At <strong>WorkWise</strong>, we believe that staying organized doesn’t have to be complicated. That’s why our platform is
