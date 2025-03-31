@@ -1,3 +1,4 @@
+import AppLogoIcon from '@/components/app-logo-icon';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 
@@ -11,37 +12,38 @@ export default function Welcome() {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
             <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
-                <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
-                    <nav className="flex items-center justify-end gap-4">
-                        {auth.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={route('login')}
-                                    className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
-                                >
-                                    Log in
-                                </Link>
-                                <Link
-                                    href={route('register')}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Register
-                                </Link>
-                            </>
-                        )}
-                    </nav>
-                </header>
-                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <h1>Need to add content here</h1>
+                <div className="flex w-full flex-col items-center justify-center text-center lg:grow">
+                    {/* Logo */}
+                    <div className="mb-6">
+                        <AppLogoIcon />
+                    </div>
+                    <h1 className="mb-4 text-5xl font-bold text-[#1b1b18] dark:text-[#EDEDEC]">Welcome to WorkWise</h1>
+                    <p className="mb-8 text-lg text-[#3E3E3A] dark:text-[#A3A3A3]">
+                        Your ultimate productivity companion. Manage tasks, track time, and stay organised effortlessly.
+                    </p>
+                    <div className="flex gap-4">
+                        <Link href={route('register')} className="rounded-full bg-purple-500 px-6 py-3 text-white shadow-lg hover:bg-purple-600">
+                            Get Started
+                        </Link>
+                        <Link
+                            href={route('login')}
+                            className="rounded-full border border-purple-500 px-6 py-3 text-purple-500 shadow-lg hover:bg-purple-500 hover:text-white"
+                        >
+                            Log In
+                        </Link>
+                    </div>
                 </div>
-                <div className="hidden h-14.5 lg:block">WorkWise</div>
+
+                {/* Footer */}
+                <div className="mt-12 text-center">
+                    <h2 className="mb-4 text-3xl font-semibold text-[#1b1b18] dark:text-[#EDEDEC]">Why Choose WorkWise?</h2>
+                    <p className="text-md mx-auto max-w-2xl text-[#3E3E3A] dark:text-[#A3A3A3]">
+                        WorkWise is designed to help you stay productive and organised. Whether your're workig on an assignment or revising for your
+                        next test, WorkWise has the tools you need to succeed.
+                    </p>
+                </div>
+
+                <footer className="mt-12 text-sm text-[#3E3E3A] dark:text-[#A3A3A3]">2025 WorkWise.</footer>
             </div>
         </>
     );
