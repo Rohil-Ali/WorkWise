@@ -37,7 +37,6 @@ export default function CalendarPage() {
     useEffect(() => {
         const loadEvents = async () => {
             try {
-                // Check for device calendar access
                 if ('calendar' in navigator) {
                     // @ts-ignore - TypeScript doesn't know about this API
                     const calendars = await navigator.calendar.getCalendars();
@@ -57,7 +56,6 @@ export default function CalendarPage() {
                     );
                     setEvents(deviceEvents.flat());
                 } else {
-                    // Fallback to localStorage
                     const savedEvents = localStorage.getItem('calendarEvents');
                     if (savedEvents) {
                         const parsedEvents = JSON.parse(savedEvents).map((e: any) => ({
@@ -67,7 +65,6 @@ export default function CalendarPage() {
                         }));
                         setEvents(parsedEvents);
                     } else {
-                        // Default demo events
                         setEvents([
                             {
                                 id: '1',
@@ -79,7 +76,7 @@ export default function CalendarPage() {
                             {
                                 id: '2',
                                 title: 'Project Deadline',
-                                start: new Date(Date.now() + 86400000 * 3), // 3 days from now
+                                start: new Date(Date.now() + 86400000 * 3),
                                 end: new Date(Date.now() + 86400000 * 3 + 3600000),
                                 description: 'Submit final deliverables',
                             },
@@ -88,7 +85,6 @@ export default function CalendarPage() {
                 }
             } catch (error) {
                 console.error('Error loading events:', error);
-                // Fallback to localStorage if device access fails
                 const savedEvents = localStorage.getItem('calendarEvents');
                 if (savedEvents) {
                     setEvents(JSON.parse(savedEvents));
@@ -101,7 +97,6 @@ export default function CalendarPage() {
         loadEvents();
     }, []);
 
-    // Save events to localStorage when they change
     useEffect(() => {
         if (events.length > 0 && !isLoading) {
             localStorage.setItem('calendarEvents', JSON.stringify(events));
@@ -115,11 +110,10 @@ export default function CalendarPage() {
                 id: Date.now().toString(),
                 title,
                 start: slotInfo.start,
-                end: slotInfo.end || new Date(slotInfo.start.getTime() + 3600000), // Default 1 hour duration
+                end: slotInfo.end || new Date(slotInfo.start.getTime() + 3600000),
             };
             setEvents([...events, newEvent]);
 
-            // Try to sync with device calendar
             if ('calendar' in navigator) {
                 try {
                     // @ts-ignore
@@ -135,7 +129,6 @@ export default function CalendarPage() {
         if (confirm(`Delete "${event.title}"?`)) {
             setEvents(events.filter((e) => e.id !== event.id));
 
-            // Try to remove from device calendar
             if ('calendar' in navigator) {
                 try {
                     // @ts-ignore
@@ -152,7 +145,7 @@ export default function CalendarPage() {
             <AppLayout breadcrumbs={breadcrumbs}>
                 <Head title="Loading Calendar" />
                 <div className="flex h-[80vh] items-center justify-center">
-                    <div className="h-12 w-12 animate-spin rounded-full border-t-2 border-b-2 border-blue-500"></div>
+                    <div className="h-12 w-12 animate-spin rounded-full border-t-2 border-b-2 border-blue-500 dark:border-purple-500"></div>
                 </div>
             </AppLayout>
         );
@@ -161,8 +154,8 @@ export default function CalendarPage() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Calendar" />
-            <div className="flex h-full flex-1 flex-col rounded-xl p-4">
-                <div className="border-sidebar-border/70 dark:border-sidebar-border relative flex-1 rounded-xl border">
+            <div className="flex h-full flex-1 flex-col rounded-xl bg-white p-4 dark:bg-[#0a0a0a]">
+                <div className="border-sidebar-border/70 relative flex-1 rounded-xl border bg-gray-100 dark:border-gray-700 dark:bg-[#1b1b18]">
                     <Calendar
                         localizer={localizer}
                         events={events}
@@ -183,7 +176,7 @@ export default function CalendarPage() {
                             event: ({ event }) => (
                                 <div className="p-1">
                                     <strong>{event.title}</strong>
-                                    {event.location && <div className="text-xs">{event.location}</div>}
+                                    {event.location && <div className="text-xs text-gray-600 dark:text-gray-400">{event.location}</div>}
                                 </div>
                             ),
                         }}
